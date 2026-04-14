@@ -6,13 +6,6 @@ function Timer({ settings, mode }) {
  
    const navigate = useNavigate();
 
-  // 🔥 Загружаем всё из localStorage
-
-// const [settings, setSettings] = useState(() => {
-//   const saved = JSON.parse(localStorage.getItem("pomodoro"));
-//   return saved || { font: "sans", color: "red" };
-// });
-
 const [time, setTime] = useState(settings.pomodoro);
   const [isRunning, setIsRunning] = useState(false);
 
@@ -65,7 +58,7 @@ useEffect(() => {
   const saved = JSON.parse(localStorage.getItem("pomodoro"));
   if (saved) {
     setSettings(saved);
-    setTime(saved.pomodoro); // 🔥 ВАЖНО
+    setTime(saved.pomodoro); 
   }
 } 
 useEffect(() => {
@@ -149,7 +142,7 @@ useEffect(() => {
               className="mt-12 opacity-50 hover:opacity-100 transition">
       <img
         className="w-[28px]"
-        src="/src/assets/image/icon-settings.svg"
+        src="./src/assets/image/icon-settings.svg"
         alt="Settings"
       />
     </button>

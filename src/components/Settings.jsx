@@ -103,13 +103,13 @@ const [inputValue, setInputValue] = useState(String(value));
       {/* Стрелки */}
       <div className="absolute right-3 inset-y-0 flex flex-col justify-center gap-[9px]">
         <img
-          src="/src/assets/image/icon-arrow-up.svg"
+          src="./src/assets/image/icon-arrow-up.svg"
           alt="up"
           className=" w-3 cursor-pointer"
           onClick={handleUp}
         />
         <img
-          src="/src/assets/image/icon-arrow-down.svg"
+          src="./src/assets/image/icon-arrow-down.svg"
           alt="down"
           className=" w-3 cursor-pointer"
           onClick={handleDown}
@@ -137,7 +137,7 @@ return (
         <h2 className="text-[28px] text-blue-900">Settings</h2>
 
         <button onClick={() => navigate("/")}>
-          <img src="/src/assets/image/icon-close.svg" alt="Close settings" />
+          <img src="./src/assets/image/icon-close.svg" alt="Close settings" />
         </button>  
         </div> 
 
@@ -232,10 +232,7 @@ return (
              </button>
     
          ))}
-
-          {/* <button className="color-btn bg-[#f87070]"></button>
-          <button className="color-btn bg-[#70f3f8]"></button>
-          <button className="color-btn bg-[#d881f8]"></button> */}
+          
         </div> 
 
       </div>
