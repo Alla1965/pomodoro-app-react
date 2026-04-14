@@ -142,7 +142,7 @@ useEffect(() => {
               className="mt-12 opacity-50 hover:opacity-100 transition">
       <img
         className="w-[28px]"
-        src="./src/assets/image/icon-settings.svg"
+        src="/icon-settings.svg"
         alt="Settings"
       />
     </button>
