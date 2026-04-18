@@ -152,7 +152,7 @@ return (
       
       <ul className="flex flex-col gap-2 md:flex-row md:justify-between mb-6">
            {fields.map((field) => {
-               console.log(field.value);
+              
                return (
                    <li
       

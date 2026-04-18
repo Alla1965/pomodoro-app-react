@@ -1,6 +1,8 @@
 import React from "react";
 
 function ModeSwitcher({ mode, setMode, settings  }) {
+  
+  
     const modes = [
     { id: "pomodoro", label: "pomodoro" },
     { id: "short", label: "short break" },
@@ -21,7 +23,7 @@ function ModeSwitcher({ mode, setMode, settings  }) {
 
   return (
     <div className={`flex flex-col justify-center gap-10 mb-6 text-blue-100
-                  md:gap-12 2xl:gap-[14px]
+                  md:gap-12 xxl:gap-[14px]
                   ${fontMap[settings.font] || ""}`}>
 
           <p className="text-[24px] text-center text-blue-100 
@@ -29,9 +31,7 @@ function ModeSwitcher({ mode, setMode, settings  }) {
         
     <ul className="flex w-[330px] justify-between md:w-[360px]">
        {modes.map((m) => {
-         console.log("m.id:", m.id);
-
-          return (
+            return (
             <li key={m.id}>
             <button
                onClick={() => setMode(m.id)}

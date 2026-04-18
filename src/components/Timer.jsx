@@ -3,10 +3,9 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Timer({ settings, mode }) {
- 
-   const navigate = useNavigate();
 
-const [time, setTime] = useState(settings.pomodoro);
+  const navigate = useNavigate();
+  const [time, setTime] = useState(settings.pomodoro);
   const [isRunning, setIsRunning] = useState(false);
 
 const fontMap = {
@@ -21,22 +20,33 @@ const colorMap = {
   purple: "#D881F8",
 };
 
-const currentDuration =
-  mode === "pomodoro"
-    ? settings.pomodoro
-    : mode === "short"
-    ? settings.short
-    : settings.long;
+  // Формат времени
+  const formatTime = () => {
+    const min = Math.floor(time / 60);
+    const sec = time % 60;
+    return `${min}:${sec.toString().padStart(2, "0")}`;
+  };
+
+  // 🔵 Круг
+    const radius = 120;
+    const circumference = 2 * Math.PI * radius; //Длина окружности
+    const duration = settings[mode] || 1;
+    const progress = time / duration;
+    const offset = circumference  * (1 - progress);
+
+ function handleFocus() {
+  const saved = JSON.parse(localStorage.getItem("pomodoro"));
+  if (saved) {
+    // setSettings(saved);
+    setTime(saved.pomodoro); 
+  }
+} 
 
 useEffect(() => {
-  if (mode === "pomodoro") {
-    setTime(settings.pomodoro);
-  } else if (mode === "short") {
-    setTime(settings.short);
-  } else if (mode === "long") {
-    setTime(settings.long);
-  }
+  setTime(settings[mode]);
+  setIsRunning(false);
 }, [mode, settings]);
+
 
 useEffect(() => {
   if (!isRunning) return;
@@ -54,46 +64,16 @@ useEffect(() => {
   return () => clearInterval(interval);
 }, [isRunning]);
 
- function handleFocus() {
-  const saved = JSON.parse(localStorage.getItem("pomodoro"));
-  if (saved) {
-    setSettings(saved);
-    setTime(saved.pomodoro); 
-  }
-} 
-useEffect(() => {
-  setTime(settings.pomodoro);
-}, [settings]);
-
 // 🔄 Обновление после возврата со Settings
   useEffect(() => {
     window.addEventListener("focus", handleFocus);
     return () => window.removeEventListener("focus", handleFocus);
   }, []);
 
-  // Формат времени
-  const formatTime = () => {
-    console.log(time);
-    
-    const min = Math.floor(time / 60);
-    const sec = time % 60;
-    return `${min}:${sec.toString().padStart(2, "0")}`;
-  };
-
-  // 🔵 Круг
-  const radius = 120;
-  const circumference = 2 * Math.PI * radius;
-  const progress = time / currentDuration;
-  const offset = circumference * (1 - progress);
-
-  
-  console.log('progress',progress);
-   console.log('settings.pomodoro',settings.pomodoro);
-
-
-  return (
+    return (
     <div className="flex flex-col items-center justify-center">
-      {/* Круг */}
+
+      {/* circle */}
       <div
         className="relative cursor-pointer"
         onClick={() => setIsRunning(!isRunning)}
@@ -126,14 +106,13 @@ useEffect(() => {
 
         {/* Центр */}
         <div className="absolute inset-0 flex flex-col items-center justify-center">
-          <h1  className={`text-5xl text-blue-100 font-bold ${fontMap[settings.font] || "font-sans"}`}>
-                       
+          <h1  className={`text-5xl text-blue-100 font-bold ${fontMap[settings.font] || "font-sans"}`}>        
             {formatTime()}
           </h1>
 
-         <p className={`tracking-[6px] text-blue-100 text-sm mt-2 ${fontMap[settings.font] || "font-sans"}`}>
-  {isRunning ? "PAUSE" : "START"}
-</p>
+                 <p className={`tracking-[6px] text-blue-100 text-sm mt-2 ${fontMap[settings.font] || "font-sans"}`}>
+                      {isRunning ? "PAUSE" : "START"}
+                  </p>
         </div>
       </div>
 

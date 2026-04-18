@@ -4,6 +4,8 @@ import Timer from "../components/Timer";
 import { useState, useEffect } from "react";
 
 function Home() {
+
+   //начальное значение settings (из localStorage)
     const [settings, setSettings] = useState(() => {
     const saved = JSON.parse(localStorage.getItem("pomodoro"));
 
@@ -17,10 +19,11 @@ function Home() {
       }
     );
   });
-
+//начальное значение режима mode ("pomodoro")
  const [mode, setMode] = useState("pomodoro");
 
   // обновление после возврата из Settings
+ // когда компонент получает фокус, читает localStorage → обновляет settings
   useEffect(() => {
     const handleFocus = () => {
       const saved = JSON.parse(localStorage.getItem("pomodoro"));
@@ -28,9 +31,15 @@ function Home() {
     };
 
     window.addEventListener("focus", handleFocus);
+
+    //выполняется, когда компонент уходит с экрана
+    //если не удалить, браузер будет хранить все старые обработчики,приложение начинает тормозить
+    //всё, что создаёшь в useEffect → нужно очищать
+    
     return () => window.removeEventListener("focus", handleFocus);
   }, []); 
-console.log(settings);
+console.log(mode);
+
 
   return (
    <div className="h-screen flex items-center justify-center">
