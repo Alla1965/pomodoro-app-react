@@ -1,18 +1,42 @@
-# React + Vite
+# Pomodoro App React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple Pomodoro timer built with React.  
+The app helps users focus on work sessions and take regular breaks using the Pomodoro technique.
 
-Currently, two official plugins are available:
+## Overview
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+This project is a React application for time management.  
+Users can start a focus session, pause the timer, reset it, and switch between work and break periods.
 
-## React Compiler
+The project was created to practice React state, component structure, timer logic, and user interface styling.
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Features
 
-Note: This will impact Vite dev & build performances.
+- Start the Pomodoro timer
+- Pause the timer
+- Reset the timer
+- Work session timer
+- Break session timer
+- Clean and simple interface
+- Responsive layout
 
-## Expanding the ESLint configuration
+## Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- React
+- JavaScript
+- CSS
+- Vite
+
+## Project Structure
+
+src/
+-  assets/
+-   components/
+-   - App.jsx
+    - Home.jsx
+    - ModeSwitcher.jsx
+    - Settings.jsx
+    - Timer.jsx
+
+-  main.jsx
+-  index.css
