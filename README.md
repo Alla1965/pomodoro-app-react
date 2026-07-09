@@ -40,3 +40,19 @@ src/
 
 -  main.jsx
 -  index.css
+
+  
+ ## Links
+- Solution URL: 
+ ## Links
+- Solution URL: https://github.com/Alla1965/pomodoro-app-react
+- Live Site URL: [add-your-live-site-link-here](https://product-list-with-cart-ten-woad.vercel.app/)
+
+## Author
+ - GitHub - Alla1965
+ - Frontend Mentor - Alla1965
+- Live Site URL: [add-your-live-site-link-here](https://product-list-with-cart-ten-woad.vercel.app/)
+
+## Author
+ - GitHub - Alla1965
+ - Frontend Mentor - Alla1965
