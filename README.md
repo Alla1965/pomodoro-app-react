@@ -42,7 +42,7 @@ src/
 -  index.css
   
  ## Links
-- Solution URL: [GitHub] (https://github.com/Alla1965/pomodoro-app-react)
+- Solution URL: [GitHub](https://github.com/Alla1965/pomodoro-app-react)
 - Live Site URL: [pomodoro](https://pomodoro-app-react-beta.vercel.app)
 
 ## Author
