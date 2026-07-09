@@ -43,7 +43,7 @@ src/
   
  ## Links
 - Solution URL: https://github.com/Alla1965/pomodoro-app-react
-- Live Site URL: [pompdoro](https://product-list-with-cart-ten-woad.vercel.app/)
+- Live Site URL: [pompdoro](https://pomodoro-app-react-beta.vercel.app)
 
 ## Author
  - GitHub - Alla1965
